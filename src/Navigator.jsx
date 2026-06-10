@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
+import Skills from "./Skill";
 
 const sections = ["home", "about", "projects", "skills", "contact"];
 
@@ -81,7 +82,7 @@ export default function Navigator() {
         id="skills"
         className="h-screen flex items-center justify-center bg-gray-300 text-5xl font-bold"
       >
-        Skills
+        <Skills/>
       </section>
 
       <section
