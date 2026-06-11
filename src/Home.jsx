@@ -67,7 +67,7 @@ function Home() {
         UI/
       </h1>
 
-      <h1 className="absolute right-2 top-18 text-[20px] text-gray-400">
+      <h1 className="absolute right-2 top-[85px] text-[20px] text-gray-400">
         simply beautiful interfaces
       </h1>
     </section>
