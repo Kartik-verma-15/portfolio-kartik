@@ -75,7 +75,7 @@ export default function Navigator() {
         id="projects"
         className="h-screen flex items-center justify-center bg-gray-200 text-5xl font-bold"
       >
-        <Projects/>
+        Projects asdfasdfsfasdfasd
       </section>
 
       <section

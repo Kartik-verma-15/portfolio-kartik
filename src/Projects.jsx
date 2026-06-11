@@ -312,7 +312,7 @@ function Projects() {
 
       id="projects"
 
-      className="min-h-screen px-10 py-24 bg-[#ececec]"
+      className=" relative min-h-screen px-10 py-24 bg-[#ececec]"
 
     >
 
