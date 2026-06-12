@@ -7,7 +7,7 @@ function About() {
   return (
     <section
       id="about"
-      className="min-h-screen w-screen px-10 py-20 bg-[#ececec]"
+      className="min-h-screen w-screen px-10 py-20 bg-neutral-100"
     >
       {/* Heading */}
       

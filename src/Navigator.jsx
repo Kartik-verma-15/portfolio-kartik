@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skill";
+import Footer from "./Footer";
 
 const sections = ["home", "about", "projects", "skills", "contact"];
 
@@ -66,30 +67,30 @@ export default function Navigator() {
 
       <section
         id="about"
-        className="h-screen flex items-center justify-center bg-gray-100 text-5xl font-bold"
+        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
         <About/>
       </section>
 
       <section
         id="projects"
-        className="h-screen flex items-center justify-center bg-gray-200 text-5xl font-bold"
+        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
         Projects asdfasdfsfasdfasd
       </section>
 
       <section
         id="skills"
-        className="h-screen flex items-center justify-center bg-gray-300 text-5xl font-bold"
+        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
         <Skills/>
       </section>
 
       <section
-        id="contact"
-        className="h-screen flex items-center justify-center bg-gray-400 text-5xl font-bold"
+        id="Footer"
+        className="h-1/3 flex items-center justify-center bg-white  font-bold"
       >
-        Contact
+        <Footer/>
       </section>
     </>
   );

@@ -12,10 +12,7 @@ function App() {
     <div>
       <Navigator />
       
-      <div className="bg-neutral-100 font-plaster text-5xl flex-col flex justify-center  items-center text-stone-900 min-h-screen">
-       
-       
-      </div>
+      
     </div>
   )
 }

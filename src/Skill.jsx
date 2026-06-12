@@ -35,19 +35,19 @@ export default function Skills() {
     },
     {
       name: "JavaScript",
-      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781123832/ChatGPT_Image_Jun_11_2026_02_00_38_AM_ckcgrg.png",
+      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781290949/ChatGPT_Image_Jun_12_2026_11_59_30_PM_k8kkx9.png",
     },
     {
       name: "React",
-      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781123831/ChatGPT_Image_Jun_11_2026_01_35_46_AM_wzoqut.png",
+      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781290950/ChatGPT_Image_Jun_12_2026_11_59_25_PM_haacli.png",
     },
     {
       name: "Node.js",
-      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781123832/ChatGPT_Image_Jun_11_2026_02_00_38_AM_ckcgrg.png",
+      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781290950/ChatGPT_Image_Jun_13_2026_12_01_44_AM_vfawe4.png",
     },
     {
       name: "MongoDB",
-      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781123831/ChatGPT_Image_Jun_11_2026_01_35_46_AM_wzoqut.png",
+      link: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781290950/ChatGPT_Image_Jun_13_2026_12_29_51_AM_alxdq4.png",
     },
   ];
 
@@ -59,7 +59,7 @@ export default function Skills() {
 <div className="flex items-center mb-6 gap-4">
   {/* Line */}
   <motion.div
-    className="w-[50px] absolute left-0 z-20 bg-gray-300 border-r-4 border-lime-400"
+    className="w-[50px] absolute left-0 z-20 bg-neutral-100 border-r-4 border-lime-400"
     initial={{ height: 0 }}
     animate={{ height: 56 }} // h-14 = 56px
     transition={{
@@ -111,3 +111,6 @@ export default function Skills() {
     </section>
   );
 }
+
+
+
