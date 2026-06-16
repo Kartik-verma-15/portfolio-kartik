@@ -4,6 +4,7 @@ import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skill";
 import Footer from "./Footer";
+import AboutBento from "./About";
 
 const sections = ["home", "about", "projects", "skills", "contact"];
 
@@ -69,14 +70,14 @@ export default function Navigator() {
         id="about"
         className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
-        <About/>
+        <AboutBento/>
       </section>
 
       <section
         id="projects"
         className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
-        Projects asdfasdfsfasdfasd
+        <Projects/>
       </section>
 
       <section

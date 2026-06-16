@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useState } from "react";
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
 
 function ProjectCard({ title, description }) {
@@ -75,303 +77,94 @@ function ProjectCard({ title, description }) {
 }
  
 
+const projectsData = [
+  {
+    id: 1,
+    title: "Go Shadows",
+    description: "Natural personal care and body wellness brand.",
+    image: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781547505/ChatGPT_Image_Jun_15_2026_11_47_43_PM_fdfacs.png",
+    link: "https://gosadows.vercel.app", // Replace with your actual link
+  },
+  {
+    id: 2,
+    title: "Veru UI",
+    description: "A comprehensive, animated UI , modern UI component library.",
+    image: "https://res.cloudinary.com/dlexbwlfv/image/upload/v1781547113/ChatGPT_Image_Jun_15_2026_11_38_51_PM_roe7z7.png",
+    link: "https://veru-ui.vercel.app", // Replace with your actual link
+  }
+];
 
-
-
-
-
-function ProjectRow({
-
-  title1,
-
-  title2,
-
-  shortDesc,
-
-  longDesc,
-
-}) {
-
+export default function Projects() {
   return (
-
-    <motion.div
-
-      initial={false}
-
-      whileHover="hover"
-
-      className="
-
-        group
-
-        overflow-hidden
-
-        border-b
-
-        border-black/20
-
-        cursor-pointer
-
-      "
-
-    >
-
-      <motion.div
-
-        variants={{
-
-          hover: {
-
-            paddingTop: "2rem",
-
-            paddingBottom: "2rem",
-
-          },
-
-        }}
-
-        transition={{ duration: 0.4 }}
-
-        className="
-
-          px-8
-
-          py-8
-
-          flex
-
-          justify-between
-
-          gap-20
-
-        "
-
-      >
-
-        {/* Left */}
-
-        <div>
-
-          <h2
-
-            className="
-
-              text-5xl
-
-              font-bold
-
-              leading-none
-
-              transition-colors
-
-              duration-300
-
-              group-hover:text-orange-600
-
-            "
-
-          >
-
-            {title1}
-
-          </h2>
-
-
-
-          <h2
-
-            className="
-
-              text-5xl
-
-              font-bold
-
-              leading-none
-
-              transition-colors
-
-              duration-300
-
-              group-hover:text-orange-600
-
-            "
-
-          >
-
-            {title2}
-
-          </h2>
-
-        </div>
-
-
-
-        {/* Right */}
-
-        <div className="max-w-md">
-
-          <p
-
-            className="
-
-              text-gray-600
-
-              group-hover:text-orange-600
-
-              transition-colors
-
-              duration-300
-
-            "
-
-          >
-
-            {shortDesc}
-
-          </p>
-
-
-
-          <motion.p
-
-            initial={{ height: 0, opacity: 0 }}
-
-            variants={{
-
-              hover: {
-
-                height: "auto",
-
-                opacity: 1,
-
-                marginTop: "1rem",
-
-              },
-
-            }}
-
-            className="
-
-              overflow-hidden
-
-              text-orange-600
-
-            "
-
-          >
-
-            {longDesc}
-
-          </motion.p>
-
-        </div>
-
-      </motion.div>
-
-
-
-      {/* Hover Background */}
-
-      <motion.div
-
-        className="
-
-          absolute
-
-          inset-0
-
-          -z-10
-
-          bg-[#F4D7B5]
-
-        "
-
-        initial={{ scaleY: 0 }}
-
-        whileHover={{ scaleY: 1 }}
-
-        style={{ originY: 0.5 }}
-
-      />
-
-    </motion.div>
-
-  );
-
-}
-
-
-
-
-
-function Projects() {
-
-  return (
-
-    <section
-
-      id="projects"
-
-      className=" relative min-h-screen px-10 py-24 bg-[#ececec]"
-
-    >
-
-      {/* Heading */}
-
-      <div className="flex items-center gap-4 mb-20">
-
-        <div className="h-14 w-[4px] bg-yellow-400 rounded-full"></div>
-
-
-
-        <h2 className="text-5xl font-audiowide tracking-wider">
-
-          PROJECTS
-
-        </h2>
-
+    <section className="min-h-screen w-screen bg-[#F2F2F2] p-8 md:p-16 font-sans">
+      {/* Header matching your original screenshot */}
+      <div className="flex items-center md: gap-3 mb-16">
+        <div className="w-1 h-14 bg-yellow-400"></div>
+        <h2 className="text-5xl font-black font-audiowide tracking-tight text-black">PROJECTS</h2>
       </div>
 
+      {/* Apple-style Horizontal Carousel Container */}
+      <div className="flex flex-row justify-center md:justify-start  items-center flex-wrap gap-10">
+        {projectsData.map((project) => (
+          <motion.div
+            key={project.id}
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            // Smooth scaling effect on the whole card like Apple's App Store
+            whileTap={{ scale: 0.98 }}
+            className="group relative w-72 h-[32rem] rounded-[2.5rem] overflow-hidden bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] cursor-pointer"
+          >
+            {/* Project Image */}
+            <motion.img
+              src={project.image}
+              alt={project.title}
+              className="w-[350px] h-full object-cover"
+              variants={{
+                rest: { scale: 1 },
+                hover: { scale: 1.05 } // Subtle zoom on the image
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            />
 
-
-      {/* Cards */}
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <ProjectRow
-
-  title1="UI"
-
-  title2="LIBRARY"
-
-  shortDesc="Reusable animated components."
-
-  longDesc="Includes magnetic buttons, gooey effects, SVG filters, animated cards, loaders and motion-driven interactions."
-
-/>
-
-
-
-<ProjectRow
-
-  title1="PORTFOLIO"
-
-  title2="WEBSITE"
-
-  shortDesc="Personal designer portfolio."
-
-  longDesc="Built with React, Tailwind and Framer Motion featuring smooth page transitions, custom animations and interactive storytelling."
-
-/>  
-
+            {/* Hover Overlay Content */}
+            <motion.div
+              variants={{
+                rest: { opacity: 0, y: 20 },
+                hover: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="absolute inset-0  flex flex-col justify-end p-6"
+            >
+              <div className="flex items-end justify-between gap-4">
+                <div className="text-stone-900">
+                  <h3 className="text-3xl font-bold mb-1 tracking-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-black font-medium line-clamp-1">
+                    {project.description}
+                  </p>
+                </div>
+                
+                {/* Link Arrow */}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 p-3 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full transition-colors duration-300 border border-white/10"
+                >
+                  <ArrowUpRight className="text-stone-900 w-5 h-5" />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        ))}
       </div>
-
     </section>
-
   );
-
 }
 
 
 
-export default Projects;
+
+
