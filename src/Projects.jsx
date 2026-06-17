@@ -138,10 +138,10 @@ export default function Projects() {
             >
               <div className="flex items-end justify-between gap-4">
                 <div className="text-stone-900">
-                  <h3 className="text-3xl font-bold mb-1 tracking-tight">
+                  <h3 className="text-5xl font-bold mb-1 tracking-tight">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-black font-medium line-clamp-1">
+                  <p className="text-base text-black font-medium line-clamp-1">
                     {project.description}
                   </p>
                 </div>
