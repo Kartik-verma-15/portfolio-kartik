@@ -40,7 +40,7 @@ export default function Navigator() {
   return (
     <>
       {/* Vertical Navigator */}
-      <div className="fixed right-6 top-1/2 z-100 flex -translate-y-1/2 flex-col gap-5">
+      <div className=" right-4 top-1/2 fixed z-100 flex -translate-y-1/2 flex-col gap-5">
         {sections.map((section) => (
           <button
             key={section}
@@ -68,7 +68,7 @@ export default function Navigator() {
 
       <section
         id="about"
-        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
+        className="min-h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
       >
         <AboutBento/>
       </section>

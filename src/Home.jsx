@@ -50,24 +50,24 @@ function Home() {
         KARTIK VERMA
       </h1>
       <h3 className="text-sm leading-relaxed text-stone-800 font-plaster ">
-        11-06-2026
+        19-06-2026
       </h3>
       </div>
       <WireframeSphere />
 
-      <h1 className="absolute -left-4 bottom-20 text-6xl text-gray-400">
+      <h1 className="absolute -left-4 bottom-20 text-6xl opacity-50 drop-shadow-md text-gray-400">
         /UX Designer
       </h1>
 
-      <h1 className="absolute left-2 top-6 text-[20px] text-gray-400">
+      <h1 className="absolute left-2 top-6 text-[20px] opacity-65 drop-shadow-md text-gray-400">
         Creating meaningful design
       </h1>
 
-      <h1 className="absolute -right-3 bottom-1/3 text-6xl text-gray-400">
+      <h1 className="absolute -right-3 bottom-1/3 drop-shadow-md opacity-50 text-6xl text-gray-400">
         UI/
       </h1>
 
-      <h1 className="absolute right-2 top-[85px] text-[20px] text-gray-400">
+      <h1 className="absolute right-2 top-[85px] text-[20px] opacity-65 drop-shadow-md text-gray-400">
         simply beautiful interfaces
       </h1>
     </section>
