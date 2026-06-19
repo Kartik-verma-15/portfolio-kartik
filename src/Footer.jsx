@@ -65,7 +65,7 @@ function Footer() {
 
             {/* Github */}
             <motion.a
-              href="https://github.com/YOUR_GITHUB"
+              href="https://github.com/Kartik-verma-15"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{

@@ -77,8 +77,8 @@ export default function AboutBento() {
         <motion.div
           onHoverStart={() => setHoveredEdu(true)}
           onHoverEnd={() => setHoveredEdu(false)}
-          className={`col-span-1 md:col-span-2 overflow-hidden rounded-3xl border border-zinc-800 bg-transparent p-5 h-auto md:h-[180px] md:hover:h-[380px] transition-all duration-500 ease-in-out ${
-            hoveredEdu ? "z-30 text-white" : ""
+          className={`col-span-1 md:col-span-2 overflow-hidden rounded-3xl border border-zinc-800 bg-neutral-100 p-5 h-auto md:h-[180px] md:hover:h-[380px] transition-all duration-500 ease-in-out ${
+            hoveredEdu ? "z-30 text-stone-900" : ""
           }`}
         >
           <div className="flex items-center gap-2">
@@ -120,8 +120,8 @@ export default function AboutBento() {
         <motion.div
           onHoverStart={() => setHoveredStack(true)}
           onHoverEnd={() => setHoveredStack(false)}
-          className={`col-span-1 md:col-span-2 overflow-hidden rounded-3xl border border-zinc-800 bg-transparent p-5 h-auto md:h-[180px] md:hover:h-[380px] transition-all duration-500 ease-in-out ${
-            hoveredStack ? "z-20 text-white" : ""
+          className={`col-span-1 md:col-span-2 overflow-hidden rounded-3xl border border-zinc-800 bg-neutral-100 p-5 h-auto md:h-[180px] md:hover:h-[380px] transition-all duration-500 ease-in-out ${
+            hoveredStack ? "z-20 text-stone-900" : ""
           }`}
         >
           <div className="flex items-center gap-2">
@@ -139,6 +139,10 @@ export default function AboutBento() {
               "CSS",
               "Figma",
               "Git",
+              "GitHub",
+              "Redux",
+              "Node.js",
+              "Express.js",
             ].map((item) => (
               <motion.div
                 key={item}
