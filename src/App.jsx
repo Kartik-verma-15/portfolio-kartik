@@ -4,12 +4,14 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Navigator from './Navigator'
+import FloatingHeader from './FloatingHeader'
 
 function App() {
   
 
   return (
     <div>
+      <FloatingHeader />
       <Navigator />
       
       
