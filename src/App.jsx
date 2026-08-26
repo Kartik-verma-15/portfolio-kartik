@@ -6,6 +6,8 @@ import './App.css'
 import Navigator from './Navigator'
 import FloatingHeader from './FloatingHeader'
 
+import Navbar from './Navbar'
+
 function App() {
   
 
@@ -14,6 +16,7 @@ function App() {
       <FloatingHeader />
       <Navigator />
       
+      {/*<Navbar />*/}
       
     </div>
   )

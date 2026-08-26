@@ -5,42 +5,21 @@ import Projects from "./Projects";
 import Skills from "./Skill";
 import Footer from "./Footer";
 import AboutBento from "./About";
+import {ProjectBento} from "./Bento";
 
-const sections = ["home", "about", "projects", "skills", "contact"];
 
+const sections = ["home", "about", "projects", "skills", "Footer"];
 export default function Navigator() {
   const [activeSection, setActiveSection] = useState("home");
+   useEffect(() => { const observers = []; sections.forEach((id) => { const section = document.getElementById(id); 
+    if (!section) return;
+     const observer = new IntersectionObserver( ([entry]) => { if (entry.isIntersecting) { setActiveSection(id); } }, { threshold: 0.5, } ); observer.observe(section); observers.push(observer); }); return () => observers.forEach((obs) => obs.disconnect()); }, []);
 
-  useEffect(() => {
-    const observers = [];
-
-    sections.forEach((id) => {
-      const section = document.getElementById(id);
-
-      if (!section) return;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(id);
-          }
-        },
-        {
-          threshold: 0.5,
-        }
-      );
-
-      observer.observe(section);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((obs) => obs.disconnect());
-  }, []);
+  // observer code...
 
   return (
     <>
-      {/* Vertical Navigator */}
-      <div className=" right-4 top-1/2 fixed z-100 flex -translate-y-1/2 flex-col gap-5">
+      <div className="fixed right-4 top-1/2 z-50 flex -translate-y-1/2 flex-col gap-5">
         {sections.map((section) => (
           <button
             key={section}
@@ -49,7 +28,7 @@ export default function Navigator() {
                 .getElementById(section)
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className={`h-[3px] rounded-full transition-all duration-300 cursor-pointer ${
+            className={`h-[3px] rounded-full transition-all duration-300 ${
               activeSection === section
                 ? "w-12 bg-red-500"
                 : "w-8 bg-black hover:w-10"
@@ -58,40 +37,24 @@ export default function Navigator() {
         ))}
       </div>
 
-      {/* Sections */}
-      <section
-        id="home"
-        className="h-screen text-5xl flex items-center justify-center font-audiowide"
-      >
-        <Home/>
+      <section id="home" className="min-h-screen">
+        <Home />
       </section>
 
-      <section
-        id="about"
-        className="min-h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
-      >
-        <AboutBento/>
+      <section id="about" className="min-h-screen bg-neutral-100">
+        <AboutBento />
       </section>
 
-      <section
-        id="projects"
-        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
-      >
-        <Projects/>
+      <section id="projects" className="min-h-screen bg-neutral-100">
+        <ProjectBento />
       </section>
 
-      <section
-        id="skills"
-        className="h-screen flex items-center justify-center bg-neutral-100 text-5xl font-bold"
-      >
-        <Skills/>
+      <section id="skills" className="min-h-screen bg-neutral-100">
+        <Skills />
       </section>
 
-      <section
-        id="Footer"
-        className="h-1/3 flex items-center justify-center bg-white  font-bold"
-      >
-        <Footer/>
+      <section id="Footer" className="min-h-[33vh] bg-white">
+        <Footer />
       </section>
     </>
   );
