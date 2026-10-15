@@ -6,8 +6,8 @@ import Skills from "./Skill";
 import Footer from "./Footer";
 import AboutBento from "./About";
 import {ProjectBento} from "./Bento";
-
-
+import Herosection from "./Herosection";
+import About2 from "./About2";
 const sections = ["home", "about", "projects", "skills", "Footer"];
 export default function Navigator() {
   const [activeSection, setActiveSection] = useState("home");
@@ -38,11 +38,11 @@ export default function Navigator() {
       </div>
 
       <section id="home" className="min-h-screen">
-        <Home />
+        <Herosection/>
       </section>
 
       <section id="about" className="min-h-screen bg-neutral-100">
-        <AboutBento />
+        <About2 />
       </section>
 
       <section id="projects" className="min-h-screen bg-neutral-100">
