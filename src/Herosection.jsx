@@ -98,7 +98,7 @@ export default function Herosection() {
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2400&q=90"
+          src="https://res.cloudinary.com/dlexbwlfv/image/upload/v1792867780/Cinematic_Blue-Purple_Studio_Portrait_gyfoo6.png"
           alt="Full-screen editorial portrait"
           draggable="false"
           className="h-full w-full select-none object-cover object-center grayscale contrast-125 brightness-75"
@@ -144,7 +144,7 @@ export default function Herosection() {
 
       {/* CUSTOM CURSOR */}
       <motion.div
-        className="pointer-events-none absolute left-0 top-0 z-40 hidden h-20 w-20 items-center justify-center rounded-full border border-white/80 bg-white/10 text-[9px] uppercase tracking-[0.2em] text-white backdrop-blur-sm md:flex"
+        className="pointer-events-none absolute left-0 top-0 z-40 hidden h-24 w-24 items-center justify-center rounded-full border border-white/80 bg-white/10 text-[9px] uppercase tracking-[0.2em] text-white backdrop-blur-sm md:flex"
         style={{
           x: smoothX,
           y: smoothY,

@@ -8,7 +8,7 @@ import AboutBento from "./About";
 import {ProjectBento} from "./Bento";
 import Herosection from "./Herosection";
 import About2 from "./About2";
-const sections = ["home", "about", "projects", "skills", "Footer"];
+const sections = ["home", "about2", "projects", "skills", "Footer"];
 export default function Navigator() {
   const [activeSection, setActiveSection] = useState("home");
    useEffect(() => { const observers = []; sections.forEach((id) => { const section = document.getElementById(id); 
@@ -41,7 +41,7 @@ export default function Navigator() {
         <Herosection/>
       </section>
 
-      <section id="about" className="min-h-screen bg-neutral-100">
+      <section id="about2" className="min-h-screen bg-neutral-100">
         <About2 />
       </section>
 

@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence ,useInView } from "framer-motion";
 import {
   GraduationCap,
   Code2,
@@ -17,6 +17,70 @@ import {
   MoveUpRight,
 } from "lucide-react";
 
+import { useRef } from "react";
+
+
+export const Signature = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.6,
+  });
+
+  const paths = [
+    // K — large signature flourish
+    "M12 95 C38 65, 68 24, 94 7 C76 35, 51 75, 31 104 C18 125, 35 132, 57 111 C76 94, 91 72, 105 57 C93 76, 102 90, 121 79",
+
+    // artik
+    "M119 79 C130 61, 145 55, 148 64 C151 73, 132 88, 125 82 C120 76, 139 58, 149 64 C159 71, 148 84, 153 86 C161 88, 174 68, 182 61 C171 77, 169 86, 177 84 C187 80, 199 64, 208 57 C196 75, 193 88, 201 86 C214 82, 228 66, 237 61 C226 76, 223 86, 231 84 C241 81, 249 70, 257 63",
+
+    // V — oversized initial
+    "M259 62 C278 44, 292 23, 303 8 C293 37, 278 69, 264 103 C285 84, 305 62, 323 56",
+
+    // erma
+    "M321 76 C333 61, 347 56, 350 64 C353 72, 332 86, 327 80 C323 74, 343 59, 352 65 C361 72, 355 83, 363 83 C372 83, 383 69, 393 60 C383 76, 380 86, 389 84 C400 81, 414 66, 423 59 C414 74, 411 84, 420 83 C431 81, 444 66, 453 61 C442 76, 443 85, 451 83 C464 80, 480 69, 494 67",
+
+    // Final underline flourish
+    "M357 97 C405 103, 460 94, 513 76",
+  ];
+
+  return (
+      <div
+        ref={ref}
+        className="pointer-events-none absolute inset-x-5 bottom-24 z-10 w-[calc(100%-2.5rem)] max-w-2xl text-white drop-shadow-[0_2px_3px_rgba(0,0,0,0.45)] sm:inset-x-6 sm:bottom-28 sm:w-[calc(100%-3rem)]"
+      >
+      <svg
+        viewBox="0 0 530 145"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-full h-auto overflow-visible"
+        fill="none"
+        role="img"
+        aria-label="Kartik Verma signature"
+      >
+        {paths.map((d, index) => (
+          <motion.path
+            key={index}
+            d={d}
+            stroke="currentColor"
+            strokeWidth={index === 0 || index === 2 ? 2.2 : 1.8}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0 }}
+            animate={{
+              pathLength: isInView ? 1 : 0,
+            }}
+            transition={{
+              duration: index === 4 ? 0.8 : 1.2,
+              delay: isInView ? index * 0.65 : 0,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 const skills = [
   "React",
   "Tailwind",
@@ -28,7 +92,7 @@ const skills = [
   "Git",
 ];
 
-const songs = ["505", "Sweater Weather", "Until I Found You"];
+const songs = ["52 Bars ", "Plug Talk", "Silence"];
 
 const projects = [
   "Portfolio v2",
@@ -232,25 +296,12 @@ export default function About2() {
               {/* Portrait */}
               <div className="group relative min-h-[330px] overflow-hidden rounded-xl bg-neutral-300 sm:min-h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85"
+                  src="https://res.cloudinary.com/dlexbwlfv/image/upload/v1792867780/Cinematic_Blue-Purple_Studio_Portrait_gyfoo6.png"
                   alt="Editorial portrait"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/5" />
-
-                <svg
-                  className="absolute right-5 top-5 w-12 text-[#f15a32] sm:w-16"
-                  viewBox="0 0 100 60"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 49 C24 7, 48 4, 31 23 S61 13, 94 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
 
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                   <div className="mb-3 flex items-center gap-2">
@@ -267,6 +318,8 @@ export default function About2() {
                     <ArrowUpRight className="text-white" size={20} />
                   </div>
                 </div>
+
+                <Signature />
               </div>
 
               {/* Profile information */}
